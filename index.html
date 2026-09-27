@@ -3,17 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Creative Studio</title>
+    <title>The Adventurer's Archive</title>
     <style>
-        /* Modern Color Palette & Clean Fonts */
+        /* Light Adventurous Theme Palette */
         :root {
-            --bg-color: #f7f9fc;
+            --bg-color: #fdfbf7;
             --card-bg: #ffffff;
-            --accent-art: #ff7675;
-            --accent-story: #74b9ff;
-            --text-main: #2d3436;
+            --primary-accent: #2c5e3b; /* Forest Green */
+            --secondary-accent: #d97736; /* Warm Amber */
+            --text-main: #2b2d2f;
             --text-sub: #636e72;
-            --shadow: 0 8px 20px rgba(0,0,0,0.06);
+            --border-color: #e2dcd2;
+            --shadow: 0 10px 25px rgba(44, 94, 59, 0.07);
         }
 
         body {
@@ -25,36 +26,38 @@
             line-height: 1.6;
         }
 
-        /* Hero Header */
+        /* Banner / Header */
         header {
             text-align: center;
-            padding: 60px 20px 40px;
-            background: linear-gradient(135deg, #a8c0ff 0%, #3f2b96 100%);
-            color: white;
-            border-bottom-left-radius: 24px;
-            border-bottom-right-radius: 24px;
+            padding: 70px 20px 50px;
+            background: linear-gradient(135deg, #2c5e3b 0%, #1e3f28 100%);
+            color: #fdfbf7;
+            border-bottom-left-radius: 30px;
+            border-bottom-right-radius: 30px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
         }
 
         header h1 {
             font-size: 2.8rem;
-            margin: 0 0 10px 0;
-            letter-spacing: -0.5px;
+            margin: 0 0 12px 0;
+            letter-spacing: 0.5px;
         }
 
         header p {
-            font-size: 1.2rem;
+            font-size: 1.15rem;
             opacity: 0.9;
             margin: 0;
+            font-style: italic;
         }
 
-        /* Container */
+        /* Main Container */
         .container {
             max-width: 1050px;
             margin: 40px auto;
             padding: 0 20px;
         }
 
-        /* Section Titles with Badges */
+        /* Section Title with Badge */
         .section-header {
             display: flex;
             align-items: center;
@@ -65,27 +68,20 @@
         .section-header h2 {
             font-size: 1.8rem;
             margin: 0;
+            color: var(--primary-accent);
         }
 
-        .badge-art {
-            background-color: #ffeaa7;
-            color: #d63031;
-            padding: 4px 12px;
+        .badge {
+            background-color: #f3ece1;
+            color: var(--secondary-accent);
+            padding: 4px 14px;
             border-radius: 20px;
             font-size: 0.85rem;
             font-weight: bold;
+            border: 1px solid var(--border-color);
         }
 
-        .badge-story {
-            background-color: #dfe6e9;
-            color: #0984e3;
-            padding: 4px 12px;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            font-weight: bold;
-        }
-
-        /* Artwork Grid */
+        /* Art Gallery Grid */
         .art-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -95,25 +91,26 @@
 
         .art-card {
             background: var(--card-bg);
-            border-radius: 16px;
+            border-radius: 18px;
             overflow: hidden;
+            border: 1px solid var(--border-color);
             box-shadow: var(--shadow);
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
         }
 
         .art-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 12px 24px rgba(0,0,0,0.1);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
         }
 
         .art-placeholder {
             width: 100%;
             height: 220px;
-            background: linear-gradient(45deg, #ffeaa7, #fab1a0);
+            background: linear-gradient(135deg, #e8dfd1, #f3ece1);
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #d63031;
+            color: var(--secondary-accent);
             font-weight: 600;
         }
 
@@ -123,7 +120,8 @@
 
         .art-details h3 {
             margin: 0 0 6px 0;
-            font-size: 1.2rem;
+            font-size: 1.25rem;
+            color: var(--primary-accent);
         }
 
         .art-details p {
@@ -142,25 +140,27 @@
 
         .story-card {
             background: var(--card-bg);
-            border-radius: 16px;
+            border-radius: 18px;
             padding: 28px;
+            border: 1px solid var(--border-color);
             box-shadow: var(--shadow);
-            border-left: 6px solid var(--accent-story);
-            transition: transform 0.2s ease;
+            border-left: 6px solid var(--secondary-accent);
+            transition: transform 0.25s ease;
         }
 
         .story-card:hover {
-            transform: translateX(4px);
+            transform: translateX(5px);
         }
 
         .story-card h3 {
             margin: 0 0 8px 0;
             font-size: 1.4rem;
+            color: var(--primary-accent);
         }
 
         .story-meta {
             font-size: 0.85rem;
-            color: var(--accent-story);
+            color: var(--secondary-accent);
             font-weight: bold;
             text-transform: uppercase;
             letter-spacing: 0.5px;
@@ -178,14 +178,15 @@
             padding: 40px 20px;
             color: var(--text-sub);
             font-size: 0.9rem;
+            border-top: 1px solid var(--border-color);
         }
     </style>
 </head>
 <body>
 
     <header>
-        <h1>Welcome to My Creative Studio</h1>
-        <p>A personal showcase of original artwork, visual concepts, and stories.</p>
+        <h1>🧭 The Adventurer's Archive</h1>
+        <p>A collection of original visual creations, concepts, and story logs.</p>
     </header>
 
     <div class="container">
@@ -193,51 +194,51 @@
         <!-- Artwork Section -->
         <div class="section-header">
             <h2>🎨 Visual Gallery</h2>
-            <span class="badge-art">Gallery</span>
+            <span class="badge">Expedition Art</span>
         </div>
 
         <div class="art-grid">
             <div class="art-card">
-                <div class="art-placeholder">Image Coming Soon</div>
+                <div class="art-placeholder">Artwork File Coming Soon</div>
                 <div class="art-details">
                     <h3>Artwork Title 01</h3>
-                    <p>Digital Illustration • 2026</p>
+                    <p>Digital Art • Environment Concept</p>
                 </div>
             </div>
 
             <div class="art-card">
-                <div class="art-placeholder">Image Coming Soon</div>
+                <div class="art-placeholder">Artwork File Coming Soon</div>
                 <div class="art-details">
                     <h3>Artwork Title 02</h3>
-                    <p>Character Concept • Sketchbook</p>
+                    <p>Character Design • Sketchbook</p>
                 </div>
             </div>
         </div>
 
         <!-- Stories Section -->
         <div class="section-header">
-            <h2>📚 Original Stories</h2>
-            <span class="badge-story">Writing</span>
+            <h2>📜 Story Logs</h2>
+            <span class="badge">Chronicles</span>
         </div>
 
         <div class="story-feed">
             <div class="story-card">
                 <div class="story-meta">Short Fiction</div>
                 <h3>Title of Your First Story</h3>
-                <p>This is where a quick synopsis or excerpt of your story will go. It stays crisp, legible, and comfortable to read on both computer monitors and mobile devices.</p>
+                <p>An excerpt or summary of your adventure story will go here. The warm paper-like background ensures a comfortable reading experience.</p>
             </div>
 
             <div class="story-card">
-                <div class="story-meta">Worldbuilding / Lore</div>
+                <div class="story-meta">Worldbuilding</div>
                 <h3>Title of Your Second Piece</h3>
-                <p>Preview text for character lore, world concept, or narrative writing samples for your portfolio.</p>
+                <p>Add lore entries, universe details, or character backgrounds for your portfolio application.</p>
             </div>
         </div>
 
     </div>
 
     <footer>
-        <p>© 2026 Portfolio • Built with GitHub Pages</p>
+        <p>© 2026 Creative Portfolio • Built with GitHub Pages</p>
     </footer>
 
 </body>
