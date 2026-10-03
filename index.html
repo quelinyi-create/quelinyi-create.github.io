@@ -66,24 +66,33 @@
             gap: 25px;
         }
 
-        /* Project Card - Clean solid white design for high contrast */
+       /* Project Card - Split Google Classroom Style */
         .card {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.8);
+            background: #ffffff;
             border-radius: 14px;
-            padding: 30px;
+            overflow: hidden;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.8);
         }
 
-        .card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+        /* Top custom image banner */
+        .card-banner {
+            height: 140px;
+            background: url('BobJobDetect.png') no-repeat center center;
+            background-size: cover;
+        }
+
+        /* Bottom white content section */
+        .card-content {
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+            justify-content: space-between;
         }
 
         .card h3 {
