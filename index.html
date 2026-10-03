@@ -166,6 +166,33 @@
             background: rgba(15, 23, 42, 0.7);
             backdrop-filter: blur(4px);
         }
+        /* Lightbox Modal Background */
+    .lightbox-modal {
+        display: none;
+        position: fixed;
+        z-index: 1000;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.85);
+        justify-content: center;
+        align-items: center;
+        cursor: zoom-out;
+    }
+
+    /* Lightbox Image */
+    .lightbox-modal img {
+        max-width: 90%;
+        max-height: 90vh;
+        border-radius: 12px;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+    }
+
+    /* Make clickable cards/images show a zoom cursor */
+    .lightbox-trigger {
+        cursor: zoom-in;
+    }
     </style>
 </head>
 <body>
@@ -256,6 +283,23 @@
     <footer>
         <p>&copy; 2026 My Portfolio. Built for College Applications.</p>
     </footer>
+<!-- Lightbox Container -->
+<div id="lightbox" class="lightbox-modal" onclick="closeLightbox()">
+    <img id="lightbox-img" src="" alt="Expanded View">
+</div>
 
+<script>
+    function openLightbox(imgElement) {
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        lightboxImg.src = imgElement.src;
+        lightbox.style.display = 'flex';
+    }
+
+    function closeLightbox() {
+        const lightbox = document.getElementById('lightbox');
+        lightbox.style.display = 'none';
+    }
+</script>
 </body>
 </html>
