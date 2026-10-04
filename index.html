@@ -5,6 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My College Portfolio</title>
     <style>
+    /* ... all your existing CSS for your cards and layout ... */
+
+    /* Add the background switcher button styles here: */
+    .bg-switch-btn {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background: rgba(15, 23, 42, 0.8);
+        color: #e2e8f0;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        padding: 8px 14px;
+        border-radius: 20px;
+        cursor: pointer;
+        font-family: inherit;
+        font-size: 14px;
+        z-index: 1000;
+        transition: background 0.2s;
+    }
+
+    .bg-switch-btn:hover {
+        background: rgba(30, 41, 59, 0.9);
+    }
+</style>
         /* Reset and Base Styles */
         * {
             margin: 0;
@@ -256,5 +279,25 @@
     <footer>
         <p>&copy; 2026 My Portfolio. Built for College Applications.</p>
     </footer>
+            <!-- Paste your background switcher button and script here -->
+    <button class="bg-switch-btn" onclick="nextBackground()">🌙 Change Background</button>
+
+    <script>
+        const backgrounds = [
+            "Background.png",  // Your default background file name
+            "Background2.png", // Your second background file name
+            "Background3.png"  // Your third background file name
+        ];
+        
+        let currentBgIndex = 0;
+
+        function nextBackground() {
+            currentBgIndex = (currentBgIndex + 1) % backgrounds.length;
+            document.body.style.backgroundImage = `url('${backgrounds[currentBgIndex]}')`;
+            document.body.style.backgroundSize = 'cover';
+            document.body.style.backgroundPosition = 'center';
+            document.body.style.backgroundAttachment = 'fixed';
+        }
+    </script>
 </body>
 </html>
