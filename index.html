@@ -80,8 +80,9 @@
         /* Gallery Grid */
     .gallery-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-        gap: 40px; /* <--- Increase this number to put more space between cards (e.g., 35px or 40px) */
+        grid-template-columns: repeat(auto-fit, 350px); /* Locks the card width so they won't stretch */
+        justify-content: center;                        /* Centers the cards nicely on the screen */
+        gap: 40px;                                      /* Keeps your nice spacing between them */
     }
 
        /* Project Card - Split Google Classroom Style */
