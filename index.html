@@ -43,13 +43,12 @@
             justify-content: space-between;
         }
 
-        /* Main Wrapper */
-        .wrapper {
-    max-width: 1050px; /* Make it slightly narrower so the background frames both sides more */
-    margin: 0 auto;
-    padding: 60px 20px;
-        }
-
+        /* Main Wrapper - slightly wider to comfortably fit 3 cards */
+    .wrapper {
+        max-width: 1200px; 
+        margin: 0 auto;
+        padding: 60px 20px;
+    }
         /* Header Section */
         header {
             text-align: center;
@@ -76,13 +75,11 @@
             color: #cbd5e1;
             font-weight: 400;
         }
-
-        /* Gallery Grid */
+    /* Gallery Grid - forces exactly 3 columns with gaps only in between */
     .gallery-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, 350px);
-        justify-content: space-between; /* Pushes the extra space IN BETWEEN the cards instead of around the edges */
-        gap: 30px;                      /* Controls the spacing between them */
+        grid-template-columns: repeat(3, 1fr); /* Forces exactly 3 cards in a row */
+        gap: 30px;                             /* Puts the spacing strictly between the cards */
     }
 
        /* Project Card - Split Google Classroom Style */
