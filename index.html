@@ -219,6 +219,8 @@
         #custom-cursor.mode-star  { color: #a78bfa; text-shadow: 0 0 10px #a78bfa, 0 0 20px #c4b5fd; }
         #custom-cursor.mode-pen   { color: #f59e0b; text-shadow: 0 0 8px rgba(245,158,11,0.7); }
         #custom-cursor.mode-heart { color: #f472b6; text-shadow: 0 0 10px rgba(244,114,182,0.8); }
+        #custom-cursor.mode-witch { transform: translate(-50%, -50%) rotate(-12deg); filter: drop-shadow(0 0 6px rgba(251,146,60,0.9)); }
+        #custom-cursor.mode-witch.cursor-hover { transform: translate(-50%, -50%) rotate(0deg); filter: drop-shadow(0 0 8px rgba(168,85,247,0.9)); }
         #custom-cursor.mode-glow {
             font-size: 0;
             width: 22px; height: 22px;
@@ -365,6 +367,7 @@
         { id: 'star',   label: 'Star',   symbol: '\u2726' },
         { id: 'pen',    label: 'Pen',    symbol: '\u270E' },
         { id: 'heart',  label: 'Heart',  symbol: '\u2665' },
+        { id: 'witch',  label: 'Witch Broom', symbol: '\uD83E\uDDF9' },
         { id: 'glow',   label: 'Glow Ring', symbol: '' }
     ];
     let currentCursorIndex = parseInt(localStorage.getItem('cursorMode') || '0', 10);
@@ -398,11 +401,12 @@
         cursorEl.style.left = e.clientX + 'px';
         cursorEl.style.top = e.clientY + 'px';
         // Sparkle trail only in Star mode
-        if (cursorModes[currentCursorIndex].id === 'star' && Date.now() - lastSparkle > 70) {
+        if ((cursorModes[currentCursorIndex].id === 'star' || cursorModes[currentCursorIndex].id === 'witch') && Date.now() - lastSparkle > 70) {
             lastSparkle = Date.now();
             const sp = document.createElement('span');
             sp.className = 'cursor-sparkle';
             sp.textContent = '\u2726';
+            if (cursorModes[currentCursorIndex].id === 'witch') sp.style.color = '#fb923c';
             sp.style.left = (e.clientX + (Math.random() * 20 - 10)) + 'px';
             sp.style.top = (e.clientY + (Math.random() * 20 - 10)) + 'px';
             document.body.appendChild(sp);
@@ -411,8 +415,16 @@
     });
 
     document.addEventListener('mouseover', function(e) {
-        if (e.target.closest('a, button, .card')) cursorEl.classList.add('cursor-hover');
+        const mode = cursorModes[currentCursorIndex];
+        const onClickable = !!e.target.closest('a, button, .card');
+        if (onClickable) cursorEl.classList.add('cursor-hover');
         else cursorEl.classList.remove('cursor-hover');
+        if (mode.id === 'witch') {
+            // Broom normally, pointing finger when you can click something
+            cursorEl.textContent = onClickable ? '\u261D\uFE0F' : mode.symbol;
+        } else if (mode.id !== 'normal' && mode.id !== 'glow') {
+            cursorEl.textContent = mode.symbol;
+        }
     });
 
     applyCursor();
