@@ -362,70 +362,64 @@
            <button class="bg-switch-btn" onclick="nextBackground()">Change Background</button>
            <button class="cursor-switch-btn" id="cursorBtn" onclick="nextCursor()">Pixel-ify Cursor</button>
            <div id="custom-cursor"></div>
-           <div class="chibi-muse"><svg viewBox="0 0 160 152" aria-label="Anime chibi Muse cat sitting">
+           <div class="chibi-muse"><svg viewBox="0 0 160 165" aria-label="Muse as a slim anime black cat, sitting">
   <defs>
     <linearGradient id="fur" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#4a4560"/>
-      <stop offset="1" stop-color="#2b2838"/>
+      <stop offset="0" stop-color="#454154"/>
+      <stop offset="1" stop-color="#232130"/>
     </linearGradient>
     <linearGradient id="eyeGrad" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#4c1d95"/>
-      <stop offset="0.55" stop-color="#8b5cf6"/>
-      <stop offset="1" stop-color="#f0abfc"/>
+      <stop offset="0" stop-color="#b45309"/>
+      <stop offset="0.5" stop-color="#facc15"/>
+      <stop offset="1" stop-color="#fef08a"/>
     </linearGradient>
     <radialGradient id="bellGold" cx="0.35" cy="0.3" r="1">
       <stop offset="0" stop-color="#fef08a"/>
       <stop offset="1" stop-color="#d97706"/>
     </radialGradient>
   </defs>
-  <g class="chibi-tail">
-    <path d="M52,124 C18,126 6,96 22,74 C27,67 36,71 34,80 C31,97 40,108 58,110 C66,111 64,122 52,124 Z" fill="#2b2838" stroke="#171321" stroke-width="2.5" stroke-linejoin="round"/>
-    <path d="M20,86 C24,82 28,80 32,80 M24,100 C28,96 33,95 37,96" stroke="#4a4560" stroke-width="3" fill="none" stroke-linecap="round"/>
-  </g>
-  <ellipse cx="45" cy="122" rx="16" ry="20" fill="#2b2838" stroke="#171321" stroke-width="2.5"/>
-  <ellipse cx="115" cy="122" rx="16" ry="20" fill="#2b2838" stroke="#171321" stroke-width="2.5"/>
-  <path d="M80,82 C63,82 52,101 51,119 C50,136 62,144 80,144 C98,144 110,136 109,119 C108,101 97,82 80,82 Z" fill="url(#fur)" stroke="#171321" stroke-width="2.5" stroke-linejoin="round"/>
-  <path d="M96,88 C104,98 106,112 104,128 C100,138 92,142 84,143 C96,132 100,108 96,88 Z" fill="#211e30" opacity="0.55"/>
-  <ellipse cx="80" cy="118" rx="17" ry="20" fill="#d8d4e8" opacity="0.22"/>
-  <path d="M67,108 L67,133 C67,139 77,139 77,133 L77,108 Z" fill="#2b2838" stroke="#171321" stroke-width="2.2" stroke-linejoin="round"/>
-  <path d="M83,108 L83,133 C83,139 93,139 93,133 L93,108 Z" fill="#2b2838" stroke="#171321" stroke-width="2.2" stroke-linejoin="round"/>
-  <ellipse cx="57" cy="141" rx="14" ry="5.5" fill="#2b2838" stroke="#171321" stroke-width="2.2"/>
-  <ellipse cx="103" cy="141" rx="14" ry="5.5" fill="#2b2838" stroke="#171321" stroke-width="2.2"/>
+  <path class="chibi-tail" d="M104,150 C72,160 34,160 20,146 C10,136 10,120 18,112 C23,107 29,111 27,119 C25,130 30,138 42,142 C58,147 84,146 100,140 Z" fill="#232130" stroke="#14111f" stroke-width="2.5" stroke-linejoin="round"/>
+  <ellipse cx="60" cy="134" rx="11" ry="17" fill="#232130" stroke="#14111f" stroke-width="2.5"/>
+  <ellipse cx="100" cy="134" rx="11" ry="17" fill="#232130" stroke="#14111f" stroke-width="2.5"/>
+  <path d="M80,68 C68,68 60,85 59,105 C58,125 61,141 65,149 L95,149 C99,141 102,125 101,105 C100,85 92,68 80,68 Z" fill="url(#fur)" stroke="#14111f" stroke-width="2.5" stroke-linejoin="round"/>
+  <path d="M93,74 C99,88 100,108 97,128 C95,139 91,146 87,149 C94,134 96,100 93,74 Z" fill="#17141f" opacity="0.5"/>
+  <ellipse cx="80" cy="116" rx="11" ry="24" fill="#d8d4e8" opacity="0.18"/>
+  <path d="M71,108 L71,143 C71,148 79,148 79,143 L79,108 Z" fill="#2b2838" stroke="#14111f" stroke-width="2"/>
+  <path d="M81,108 L81,143 C81,148 89,148 89,143 L89,108 Z" fill="#2b2838" stroke="#14111f" stroke-width="2"/>
+  <ellipse cx="69" cy="150" rx="11" ry="5" fill="#232130" stroke="#14111f" stroke-width="2"/>
+  <ellipse cx="91" cy="150" rx="11" ry="5" fill="#232130" stroke="#14111f" stroke-width="2"/>
   <g class="chibi-ear-left">
-    <path d="M40,32 C31,9 36,0 46,5 C56,10 58,23 52,36 Z" fill="url(#fur)" stroke="#171321" stroke-width="2.5" stroke-linejoin="round"/>
-    <path d="M42,28 C38,15 40,9 45,12 C49,15 50,22 48,29 Z" fill="#f9a8d4"/>
+    <path d="M53,28 L57,3 L75,19 C68,25 59,28 53,28 Z" fill="url(#fur)" stroke="#14111f" stroke-width="2.5" stroke-linejoin="round"/>
+    <path d="M57,23 L59,10 L69,18 C65,21 60,23 57,23 Z" fill="#f9a8d4"/>
   </g>
   <g class="chibi-ear-right">
-    <path d="M120,32 C129,9 124,0 114,5 C104,10 102,23 108,36 Z" fill="url(#fur)" stroke="#171321" stroke-width="2.5" stroke-linejoin="round"/>
-    <path d="M118,28 C122,15 120,9 115,12 C111,15 110,22 112,29 Z" fill="#f9a8d4"/>
+    <path d="M107,28 L103,3 L85,19 C92,25 101,28 107,28 Z" fill="url(#fur)" stroke="#14111f" stroke-width="2.5" stroke-linejoin="round"/>
+    <path d="M103,23 L101,10 L91,18 C95,21 100,23 103,23 Z" fill="#f9a8d4"/>
   </g>
-  <path d="M66,16 L72,5 L79,13 L86,3 L93,14 L97,8 L98,18 C90,13 74,12 66,16 Z" fill="#2b2838" stroke="#171321" stroke-width="2.2" stroke-linejoin="round"/>
-  <path d="M80,14 C58,14 44,30 43,48 L37,43 L41,54 L36,55 L44,62 C51,74 64,81 80,81 C96,81 109,74 116,62 L124,55 L119,54 L123,43 L117,48 C116,30 102,14 80,14 Z" fill="url(#fur)" stroke="#171321" stroke-width="2.5" stroke-linejoin="round"/>
-  <path d="M104,20 C114,28 118,40 117,52 C116,64 110,72 102,77 C112,60 113,38 104,20 Z" fill="#211e30" opacity="0.5"/>
-  <ellipse cx="58" cy="24" rx="13" ry="6" fill="#ffffff" opacity="0.14" transform="rotate(-18 58 24)"/>
-  <path d="M50,36 C54,34 60,34 63,36 M97,36 C100,34 106,34 110,36" stroke="#171321" stroke-width="2" fill="none" stroke-linecap="round" opacity="0.7"/>
-  <ellipse cx="58" cy="52" rx="9" ry="14" fill="url(#eyeGrad)" stroke="#171321" stroke-width="2.2"/>
-  <ellipse cx="102" cy="52" rx="9" ry="14" fill="url(#eyeGrad)" stroke="#171321" stroke-width="2.2"/>
-  <path d="M48,44 C51,38 65,38 68,44" stroke="#171321" stroke-width="3.6" fill="none" stroke-linecap="round"/>
-  <path d="M92,44 C95,38 109,38 112,44" stroke="#171321" stroke-width="3.6" fill="none" stroke-linecap="round"/>
-  <circle cx="54.5" cy="46" r="3.6" fill="#ffffff"/>
-  <circle cx="98.5" cy="46" r="3.6" fill="#ffffff"/>
-  <circle cx="62" cy="59" r="1.9" fill="#ffffff" opacity="0.95"/>
-  <circle cx="106" cy="59" r="1.9" fill="#ffffff" opacity="0.95"/>
-  <path d="M52,62 C55,65 61,65 64,62 M96,62 C99,65 105,65 108,62" stroke="#ffffff" stroke-width="1.6" fill="none" stroke-linecap="round" opacity="0.65"/>
-  <path d="M76,62 C78,60 82,60 84,62 C84,65 82,66.5 80,66.5 C78,66.5 76,65 76,62 Z" fill="#f472b6" stroke="#171321" stroke-width="1.6" stroke-linejoin="round"/>
-  <ellipse cx="80" cy="71" rx="3.4" ry="2.8" fill="#fb7185" stroke="#171321" stroke-width="1.6"/>
-  <ellipse cx="36" cy="64" rx="7" ry="4" fill="#f9a8d4" opacity="0.85"/>
-  <ellipse cx="124" cy="64" rx="7" ry="4" fill="#f9a8d4" opacity="0.85"/>
-  <path d="M32,60 L40,62 M33,66 L41,65 M110,65 L119,66 M120,62 L128,60" stroke="#f472b6" stroke-width="1.5" stroke-linecap="round" opacity="0.8"/>
-  <path d="M44,54 L31,51 M45,59 L32,60 M46,64 L35,69" stroke="#e5e7eb" stroke-width="1.5" stroke-linecap="round" opacity="0.8"/>
-  <path d="M116,54 L129,51 M115,59 L128,60 M114,64 L125,69" stroke="#e5e7eb" stroke-width="1.5" stroke-linecap="round" opacity="0.8"/>
-  <path d="M30,30 L32,36 L38,38 L32,40 L30,46 L28,40 L22,38 L28,36 Z" fill="#fde68a"/>
-  <path d="M128,22 L129.5,26 L134,27.5 L129.5,29 L128,33 L126.5,29 L122,27.5 L126.5,26 Z" fill="#fde68a"/>
-  <path d="M54,90 C64,98 96,98 106,90" stroke="#dc2626" stroke-width="6" fill="none" stroke-linecap="round"/>
-  <circle cx="80" cy="99" r="7" fill="url(#bellGold)" stroke="#92400e" stroke-width="1.8"/>
-  <circle cx="80" cy="101.5" r="1.8" fill="#92400e"/>
-  <path d="M74,96.5 L86,96.5" stroke="#92400e" stroke-width="1.5" stroke-linecap="round"/>
+  <path d="M71,17 L76,8 L81,15 L86,7 L90,16 C84,12 76,12 71,17 Z" fill="#232130" stroke="#14111f" stroke-width="2" stroke-linejoin="round"/>
+  <path d="M80,16 C62,16 49,29 48,45 L43,41 L46,51 L42,52 L49,58 C55,68 66,73 80,73 C94,73 105,68 111,58 L118,52 L114,51 L117,41 L112,45 C111,29 98,16 80,16 Z" fill="url(#fur)" stroke="#14111f" stroke-width="2.5" stroke-linejoin="round"/>
+  <path d="M99,20 C107,27 110,36 109,46 C108,56 104,64 98,69 C106,55 107,35 99,20 Z" fill="#17141f" opacity="0.45"/>
+  <ellipse cx="61" cy="26" rx="10" ry="4.5" fill="#ffffff" opacity="0.13" transform="rotate(-16 61 26)"/>
+  <ellipse cx="66" cy="45" rx="7" ry="11" fill="url(#eyeGrad)" stroke="#14111f" stroke-width="2.2"/>
+  <ellipse cx="94" cy="45" rx="7" ry="11" fill="url(#eyeGrad)" stroke="#14111f" stroke-width="2.2"/>
+  <path d="M58,38 C61,33 71,33 74,38" stroke="#14111f" stroke-width="3.2" fill="none" stroke-linecap="round"/>
+  <path d="M86,38 C89,33 99,33 102,38" stroke="#14111f" stroke-width="3.2" fill="none" stroke-linecap="round"/>
+  <ellipse cx="66" cy="45" rx="2" ry="8" fill="#14111f"/>
+  <ellipse cx="94" cy="45" rx="2" ry="8" fill="#14111f"/>
+  <circle cx="63.5" cy="40" r="2.6" fill="#ffffff"/>
+  <circle cx="91.5" cy="40" r="2.6" fill="#ffffff"/>
+  <circle cx="68.5" cy="51" r="1.4" fill="#ffffff" opacity="0.95"/>
+  <circle cx="96.5" cy="51" r="1.4" fill="#ffffff" opacity="0.95"/>
+  <path d="M77,54 C78.5,52.5 81.5,52.5 83,54 C83,56.5 81.5,58 80,58 C78.5,58 77,56.5 77,54 Z" fill="#f472b6" stroke="#14111f" stroke-width="1.5" stroke-linejoin="round"/>
+  <path d="M80,58 C78.5,60.5 75.5,61 74,59 M80,58 C81.5,60.5 84.5,61 86,59" stroke="#e5e7eb" stroke-width="1.5" fill="none" stroke-linecap="round" opacity="0.85"/>
+  <ellipse cx="53" cy="55" rx="4.5" ry="2.6" fill="#f9a8d4" opacity="0.7"/>
+  <ellipse cx="107" cy="55" rx="4.5" ry="2.6" fill="#f9a8d4" opacity="0.7"/>
+  <path d="M50,47 L37,44 M51,52 L38,53 M52,57 L41,62" stroke="#e5e7eb" stroke-width="1.4" stroke-linecap="round" opacity="0.8"/>
+  <path d="M110,47 L123,44 M109,52 L122,53 M108,57 L119,62" stroke="#e5e7eb" stroke-width="1.4" stroke-linecap="round" opacity="0.8"/>
+  <path d="M62,78 C70,84 90,84 98,78" stroke="#dc2626" stroke-width="5.5" fill="none" stroke-linecap="round"/>
+  <circle cx="80" cy="86" r="6" fill="url(#bellGold)" stroke="#92400e" stroke-width="1.7"/>
+  <circle cx="80" cy="88.5" r="1.6" fill="#92400e"/>
+  <path d="M75,83.5 L85,83.5" stroke="#92400e" stroke-width="1.3" stroke-linecap="round"/>
 </svg><div class="chibi-shadow"></div></div>
 
 
