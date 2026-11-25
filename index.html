@@ -221,6 +221,7 @@
         #custom-cursor.mode-heart { color: #f472b6; text-shadow: 0 0 10px rgba(244,114,182,0.8); }
         #custom-cursor.mode-witch { transform: translate(-50%, -50%) rotate(-12deg); filter: drop-shadow(0 0 6px rgba(251,146,60,0.9)); }
         #custom-cursor.mode-witch.cursor-hover { transform: translate(-50%, -50%) rotate(0deg); filter: drop-shadow(0 0 8px rgba(168,85,247,0.9)); }
+        #custom-cursor.mode-muse { filter: drop-shadow(0 0 6px rgba(251,191,36,0.95)); }
         #custom-cursor.mode-glow {
             font-size: 0;
             width: 22px; height: 22px;
@@ -367,7 +368,8 @@
         { id: 'star',   label: 'Star',   symbol: '\u2726' },
         { id: 'pen',    label: 'Pen',    symbol: '\u270E' },
         { id: 'heart',  label: 'Heart',  symbol: '\u2665' },
-        { id: 'witch',  label: 'Witch Broom', symbol: '\uD83E\uDDF9' },
+        { id: 'witch',  label: 'Witch Broom', symbol: '\uD83E\uDDF9', hoverSymbol: '\u261D\uFE0F' },
+        { id: 'muse',   label: 'Muse Cat', symbol: '\uD83D\uDC08\u200D\u2B1B', hoverSymbol: '\uD83D\uDC3E' },
         { id: 'glow',   label: 'Glow Ring', symbol: '' }
     ];
     let currentCursorIndex = parseInt(localStorage.getItem('cursorMode') || '0', 10);
@@ -400,13 +402,19 @@
     document.addEventListener('mousemove', function(e) {
         cursorEl.style.left = e.clientX + 'px';
         cursorEl.style.top = e.clientY + 'px';
-        // Sparkle trail only in Star mode
-        if ((cursorModes[currentCursorIndex].id === 'star' || cursorModes[currentCursorIndex].id === 'witch') && Date.now() - lastSparkle > 70) {
+        // Trail: sparkles in Star mode, pumpkins in Witch Broom mode
+        const trailMode = cursorModes[currentCursorIndex].id;
+        const trailGap = trailMode === 'witch' ? 220 : 70;
+        if ((trailMode === 'star' || trailMode === 'witch') && Date.now() - lastSparkle > trailGap) {
             lastSparkle = Date.now();
             const sp = document.createElement('span');
             sp.className = 'cursor-sparkle';
-            sp.textContent = '\u2726';
-            if (cursorModes[currentCursorIndex].id === 'witch') sp.style.color = '#fb923c';
+            if (trailMode === 'witch') {
+                sp.textContent = '\uD83C\uDF83';
+                sp.style.fontSize = '14px';
+            } else {
+                sp.textContent = '\u2726';
+            }
             sp.style.left = (e.clientX + (Math.random() * 20 - 10)) + 'px';
             sp.style.top = (e.clientY + (Math.random() * 20 - 10)) + 'px';
             document.body.appendChild(sp);
@@ -419,9 +427,9 @@
         const onClickable = !!e.target.closest('a, button, .card');
         if (onClickable) cursorEl.classList.add('cursor-hover');
         else cursorEl.classList.remove('cursor-hover');
-        if (mode.id === 'witch') {
-            // Broom normally, pointing finger when you can click something
-            cursorEl.textContent = onClickable ? '\u261D\uFE0F' : mode.symbol;
+        if (mode.hoverSymbol) {
+            // Witch: broom -> pointing finger. Muse Cat: cat -> paw. (on clickable things)
+            cursorEl.textContent = onClickable ? mode.hoverSymbol : mode.symbol;
         } else if (mode.id !== 'normal' && mode.id !== 'glow') {
             cursorEl.textContent = mode.symbol;
         }
